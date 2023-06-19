@@ -10,14 +10,16 @@
     <el-main>
       <div class="memberDetail">
         <div>
-          <el-table :data="memberListInfo" empty-text="暂无参赛人员" style="background-color: #00aa2a" width="190%">
+          <el-table :data="memberListInfo" empty-text="暂无参赛人员">
             <el-table-column prop="member_name" align="center" label="选手"/>
             <el-table-column prop="member_code" align="center" label="工号"/>
             <el-table-column prop="team_name" align="center" label="队伍"/>
-            <el-table-column label="操作">
-              <div class="flex justify-space-between mb-4 flex-wrap gap-4">
-                <el-button type="primary" link>删除</el-button>
-              </div>
+            <el-table-column prop="id" label="操作">
+                <template #default="scope">
+                  <el-button type="primary" link v-on:click="test(scope.row.id)">
+                  <span>删除</span>
+                  </el-button>
+                </template>
             </el-table-column>
           </el-table>
         </div>
@@ -78,6 +80,9 @@ export default defineComponent({
       this.currentPage = currentPage
       this.get_member_list()
     },
+    test(con) {
+      alert(con)
+    }
   }
 })
 </script>
@@ -92,16 +97,17 @@ export default defineComponent({
   margin-bottom: 16px;
 }
 
-body .el-table th.gutter{
-  display: table-cell!important;
+body .el-table th.gutter {
+  display: table-cell !important;
 }
 
 .pageFooter {
   position: relative;
   float: right;
 }
+
 .memberDetail {
   width: 100%;
-  //background-color: #00aa2a;
+/*/ / background-color: #00aa2a;*/
 }
 </style>
