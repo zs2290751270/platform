@@ -1,4 +1,4 @@
-import { Button, Space } from '@arco-design/web-react';
+import {Button, Space} from '@arco-design/web-react';
 
 const Btn = () => {
     return (

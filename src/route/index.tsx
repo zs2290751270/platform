@@ -3,10 +3,10 @@ import Home from "../pages/Home";
 import Btn from "../pages/test/Btn";
 
 const Routers = () => {
-    return(
+    return (
         <Routes>
-            <Route path="/" element={<Home/>} >
-                <Route path='test' element={<Btn/>} />
+            <Route path="/" element={<Home/>}>
+                <Route path='test' element={<Btn/>}/>
             </Route>
         </Routes>
     )
